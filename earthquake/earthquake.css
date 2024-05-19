@@ -1,0 +1,152 @@
+/* Base and Light Theme Styles */
+:root {
+  --background-color: #e0f7fa; /* Light blue background */
+  --header-bg-color: #b3e5fc; /* Lighter shade of blue for header */
+  --text-color: #0277bd; /* Dark blue text for good contrast */
+  --input-bg-color: #ffffff;
+  --button-bg-color: #81d4fa; /* Button background */
+  --button-hover-color: #4fc3f7; /* Button hover state */
+  --border-color: #81d4fa;
+  --detail-bg-color: #ffffff;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s linear;
+}
+
+header {
+  background-color: var(--header-bg-color);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+nav a:hover, nav a.active {
+  background-color: var(--button-bg-color);
+}
+
+main {
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#earthquake-input, #search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+}
+
+#search-button {
+  background-color: var(--button-bg-color);
+  margin-left: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+#earthquake-details, #earthquake-prediction {
+  border-radius: 5px;
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: white;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #484040;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Dark Theme Styles */
+[data-theme="dark"] {
+  --background-color: #263238; /* Dark slate blue background */
+  --header-bg-color: #37474f; /* Darker shade for header */
+  --text-color: #eceff1; /* Light gray text for dark mode */
+  --input-bg-color: #37474f;
+  --button-bg-color: #546e7a;
+  --button-hover-color: #78909c;
+  --border-color: #546e7a;
+  --detail-bg-color: #455a64;
+}
+#earthquake-details{
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+.earthquake-content {
+  width: 50%;
+  float: left;
+}
+
+#map {
+  margin-top: 90px;
+  width: 50%;
+  float: right;
+  border: 1px solid var(--border-color);
+}

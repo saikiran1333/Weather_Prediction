@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Weather App - Earthquake</title>
+    <link rel="stylesheet" href="earthquake.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>My Weather App</h1>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+    </div>
+      <nav>
+        <a class="tablinks " href="index.html">Weather</a>
+        <a class="tablinks" href="aqi.html">Air Quality</a>
+        <a class="tablinks active " href="#earthquake">Earthquake</a>
+      </nav>
+    </header>
+    <main>
+      <section id="weather-page">
+        <!-- Weather page content -->
+      </section>
+      <section id="air-quality-page">
+        <!-- Air quality page content -->
+      </section>
+      <section id="earthquake-page">
+        <div class="search-container">
+          <input id="earthquake-input" type="text" placeholder="Enter a state or city">
+          <button id="search-button">Search</button>
+        </div>
+        <div class="earthquake-content">
+        <div id="earthquake-details"></div>
+        <div id="earthquake-prediction"></div>
+        </div>
+        <div id="map" style="height: 400px;"></div>
+      </section>
+
+      <canvas id="quake-chart"></canvas>
+
+
+    </main>
+    <script src="earthquake.js"></script>
+    <script>
+      const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+      function switchTheme(e) {
+          if (e.target.checked) {
+              document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+              document.documentElement.setAttribute('data-theme', 'light');
+          }
+      }
+      toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+  </body>
+</html>
